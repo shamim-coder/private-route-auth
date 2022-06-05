@@ -4,6 +4,8 @@ import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import Header from "./Components/Header/Header";
 import Registration from "./Components/Registration/Registration";
+import Orders from "./Components/Orders/Orders";
+import RequireAuth from "./Components/RequireAuth/RequireAuth";
 
 function App() {
     return (
@@ -13,6 +15,14 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/registration" element={<Registration />} />
                 <Route path="/login" element={<Login />} />
+                <Route
+                    path="/orders"
+                    element={
+                        <RequireAuth>
+                            <Orders />
+                        </RequireAuth>
+                    }
+                />
             </Routes>
         </div>
     );
